@@ -26,7 +26,9 @@
   Write a function called first that takes in two parameters, an array and a callback function.
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
-
+function first(arr, cb) {
+}
+first(names[1])
 // Code Here 
 
 // Do not edit the code below.
