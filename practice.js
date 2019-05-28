@@ -26,9 +26,11 @@
   Write a function called first that takes in two parameters, an array and a callback function.
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
+
 function first(arr, cb) {
+  cb(arr[0])
 }
-first(names[1])
+
 // Code Here 
 
 // Do not edit the code below.
@@ -48,7 +50,9 @@ first(names, function(firstName){
   Write a function called last that takes in an array and a callback function. 
   Then invoke the callback, passing in the last element in the array as the argument.
 */
-
+function last(arr, cb) {
+  cb(arr[arr.length -1]);
+}
 //Code Here
 
 // Do not edit the code below.
@@ -66,7 +70,10 @@ last(names, function(lastName){
   Write a function called multiply that takes in three parameters: two numbers and a callback function.  
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
-
+function multiply(num1, num2, cb) {
+  var product = num1 * num2;
+  return cb(product);
+}
 //Code Here
 
 // Do not edit the code below.
@@ -86,6 +93,15 @@ multiply(4, 3, function(answer){
   If the name does not exist, invoke the callback with false as the argument.
 */
 
+function contains(arr, name, cb) {
+  for (let i = 0; i <= arr.length -1; i++) {  
+  if (name === arr[i]) {
+     cb(true);
+    } else { 
+      cb(false);
+    }
+  }
+}
 //Code Here 
 
 // Do not edit the code below.
@@ -107,6 +123,16 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
+function uniq(arr, cb) {
+  var newArray=[]
+  for(let i = 0; i < arr.length ; i++ ) {
+    if(newArray.indexOf(array[i])=== -1){
+      newArray.push(array[i])
+    }
+  }
+  return cb(newArray)
+}
+
 //Code Here
 
 // Do not edit the code below.
@@ -124,7 +150,12 @@ uniq(names, function(uniqArr){
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-//Code Here 
+//Code Here
+function each(array, cb){
+  for(var i = 0; i < array.length; i++){
+    cb(array[i], i)
+  }
+} 
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -142,6 +173,14 @@ each(names, function(item, indice){
 */
 
 // Code here
+
+function getUserById(users, id, cb){
+  for(var i = 0; i < users.length; i++){
+    if(users[id] === users[id]){
+      cb(users[i])
+    }
+  }
+}
 
 // Do not edit the code below.
 var users = [
